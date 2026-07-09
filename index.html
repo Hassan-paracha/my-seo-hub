@@ -5,164 +5,261 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="QyDSUhm4hfRGneKuDBC1rA-p19E7Y2lI_Eh9krE5nVY" />
     
-    <title>Hassan Media Hub | Viral Shorts, Vlogs & Bike Repair Tips</title>
-    <meta name="description" content="Discover viral YouTube Shorts, daily family vlogs, comedy skits, and quick motorcycle repair guides from Hassan Media Hub. Watch latest trending videos." />
-    <meta name="keywords" content="Hassan Shorts, Bike Repairing Tips, Desi Comedy Shorts, Pakistan Vlogs, Trending YouTube Shorts" />
+    <title>Hassan Media Hub | Trending Shorts, Vlogs & Tech</title>
+    <meta name="description" content="Explore viral YouTube Shorts, emotional stories, daily family vlogs, and practical guides on Hassan Media Hub." />
     <link rel="canonical" href="https://hassan-paracha.github.io/my-seo-hub/" />
 
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Hassan Media Hub | Viral Shorts & Vlogs" />
-    <meta property="og:description" content="Watch trending YouTube Shorts, funny comedy skits, and practical motorcycle maintenance tips." />
+    <meta property="og:description" content="Watch trending YouTube Shorts, funny comedy skits, and practical stories." />
     <meta property="og:url" content="https://hassan-paracha.github.io/my-seo-hub/" />
     <meta property="og:image" content="https://i.ytimg.com/vi/N6zCqKAfC_U/hqdefault.jpg" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hassan Media Hub | Viral Shorts & Vlogs" />
-    <meta name="twitter:description" content="Watch trending YouTube Shorts, funny comedy skits, and practical motorcycle maintenance tips." />
-    <meta name="twitter:image" content="https://i.ytimg.com/vi/N6zCqKAfC_U/hqdefault.jpg" />
-
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f0f2f5; color: #1c1e21; line-height: 1.5; }
-        
-        /* Header styling */
-        header { background: #ffffff; padding: 25px 20px; text-align: center; border-bottom: 1px solid #e4e6eb; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        header h1 { font-size: 1.8rem; color: #111111; margin-bottom: 6px; }
-        header p { font-size: 0.95rem; color: #606770; max-width: 600px; margin: 0 auto; }
+        :root {
+            --bg-color: #0f0f0f;
+            --surface-color: #1f1f1f;
+            --surface-hover: #2d2d2d;
+            --text-primary: #f1f1f1;
+            --text-secondary: #aaaaaa;
+            --accent-color: #ff0000;
+            --accent-hover: #cc0000;
+            --border-color: #333333;
+            --card-radius: 12px;
+        }
 
-        /* Main grid container */
-        main { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 25px; max-width: 1400px; margin: 0 auto; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: var(--bg-color); color: var(--text-primary); line-height: 1.6; }
+
+        /* Navigation Header */
+        header { background: #181818; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; }
+        .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-primary); }
+        .brand-logo { background: var(--accent-color); color: white; font-weight: 800; padding: 4px 10px; border-radius: 6px; font-size: 1.1rem; }
+        .brand-title { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.5px; }
+
+        .search-bar { display: flex; align-items: center; background: #000000; border: 1px solid var(--border-color); border-radius: 20px; padding: 6px 16px; width: 40%; max-width: 400px; }
+        .search-bar input { background: transparent; border: none; color: var(--text-primary); outline: none; width: 100%; font-size: 0.9rem; }
+
+        /* Filter Tabs */
+        .filter-section { max-width: 1300px; margin: 0 auto; padding: 20px 24px 0; display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; }
+        .filter-btn { background: var(--surface-color); color: var(--text-primary); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.2s ease; }
+        .filter-btn:hover, .filter-btn.active { background: var(--text-primary); color: var(--bg-color); }
+
+        /* Hero / Introduction Section */
+        .hero { max-width: 1300px; margin: 20px auto 0; padding: 0 24px; }
+        .hero-box { background: linear-gradient(135deg, #1f1f1f 0%, #121212 100%); border: 1px solid var(--border-color); border-radius: var(--card-radius); padding: 24px; }
+        .hero h1 { font-size: 1.5rem; margin-bottom: 8px; color: var(--text-primary); }
+        .hero p { font-size: 0.95rem; color: var(--text-secondary); max-width: 800px; }
+
+        /* Main Grid */
+        main { max-width: 1300px; margin: 24px auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+
+        /* Card Component */
+        .card { background: var(--surface-color); border-radius: var(--card-radius); overflow: hidden; border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); border-color: #444; }
+
+        .card-preview { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; }
+        .card-preview iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         
-        /* Video cards */
-        .card { background: #ffffff; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify: space-between; transition: transform 0.2s ease; }
-        .card:hover { transform: translateY(-3px); }
-        .card h2 { font-size: 0.95rem; height: 42px; overflow: hidden; color: #222222; margin-bottom: 12px; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-        
-        /* Responsive Video Container */
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; background: #000000; border-radius: 8px; overflow: hidden; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        
-        /* Action Button */
-        .btn { display: block; text-align: center; background: #cc0000; color: #ffffff; text-decoration: none; padding: 10px; margin-top: 12px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: background 0.2s ease; }
-        .btn:hover { background: #990000; }
+        .badge { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.75); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; backdrop-filter: blur(4px); z-index: 2; }
+
+        .card-body { padding: 16px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
+        .card-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .card-desc { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+        .card-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 12px; margin-top: auto; }
+        .meta-tag { font-size: 0.75rem; color: var(--text-secondary); }
+        .btn-link { background: var(--accent-color); color: #ffffff; text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; transition: background 0.2s ease; }
+        .btn-link:hover { background: var(--accent-hover); }
 
         /* Footer */
-        footer { text-align: center; padding: 20px; font-size: 0.85rem; color: #70757a; border-top: 1px solid #e4e6eb; margin-top: 20px; }
+        footer { border-top: 1px solid var(--border-color); background: #141414; text-align: center; padding: 30px 20px; margin-top: 60px; font-size: 0.85rem; color: var(--text-secondary); }
+
+        @media (max-width: 600px) {
+            .search-bar { display: none; }
+            main { grid-template-columns: 1fr; padding: 0 16px; }
+            .hero { padding: 0 16px; }
+            .filter-section { padding: 16px 16px 0; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Hassan Media Hub</h1>
-        <p>Explore daily vlogs, viral entertainment shorts, and practical motorcycle maintenance tips.</p>
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <span class="brand-logo">HM</span>
+                <span class="brand-title">Hassan Media Hub</span>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search vlogs, shorts, stories..." aria-label="Search content">
+            </div>
+        </div>
     </header>
+
+    <div class="filter-section">
+        <button class="filter-btn active">All Videos</button>
+        <button class="filter-btn">Trending Shorts</button>
+        <button class="filter-btn">Emotional Stories</button>
+        <button class="filter-btn">Daily Vlogs</button>
+        <button class="filter-btn">Comedy & Pranks</button>
+    </div>
+
+    <section class="hero">
+        <div class="hero-box">
+            <h1>Featured Video Gallery & Shorts Stream</h1>
+            <p>Welcome to Hassan Media Hub. Watch curated high-engagement YouTube Shorts, emotional real-life stories, and viral video content updated regularly.</p>
+        </div>
+    </section>
 
     <main id="video-feed">
 
+        <!-- Card 1 -->
         <article class="card">
             <script type="application/ld+json">
             {
               "@context": "https://schema.org",
               "@type": "VideoObject",
-              "name": "Masoom Bachon Ka Surprise Jhula 🎡 Gareeb Bachon Ki Khushi Ne Dil Jeet Liya ❤️ #shorts #viral #trending #ytshorts",
-              "description": "Masoom Bachon Ka Surprise Jhula 🎡 Gareeb Bachon Ki Khushi Ne Dil Jeet Liya ❤️ watch trending short.",
+              "name": "Masoom Bachon Ka Surprise Jhula 🎡 Gareeb Bachon Ki Khushi Ne Dil Jeet Liya ❤️",
+              "description": "A heart-warming short story showing a joyful surprise ride given to local underprivileged kids.",
               "thumbnailUrl": "https://i.ytimg.com/vi/N6zCqKAfC_U/hqdefault.jpg",
               "uploadDate": "2026-07-08",
               "embedUrl": "https://www.youtube.com/embed/N6zCqKAfC_U",
               "contentUrl": "https://www.youtube.com/watch?v=N6zCqKAfC_U"
             }
             </script>
-            <h2>Masoom Bachon Ka Surprise Jhula 🎡 Gareeb Bachon Ki Khushi Ne Dil Jeet Liya ❤️ #shorts #viral #trending #ytshorts</h2>
-            <div class="video-container">
+            <div class="card-preview">
+                <span class="badge">Shorts</span>
                 <iframe src="https://www.youtube.com/embed/N6zCqKAfC_U" loading="lazy" title="Masoom Bachon Ka Surprise Jhula" allowfullscreen></iframe>
             </div>
-            <a class="btn" href="https://www.youtube.com/watch?v=N6zCqKAfC_U" target="_blank" rel="noopener" aria-label="Watch Masoom Bachon Ka Surprise Jhula on YouTube">Watch on YouTube</a>
+            <div class="card-body">
+                <h2 class="card-title">Masoom Bachon Ka Surprise Jhula 🎡 Gareeb Bachon Ki Khushi Ne Dil Jeet Liya ❤️</h2>
+                <p class="card-desc">A heart-warming short story showing a joyful surprise ride given to local underprivileged kids in the community.</p>
+                <div class="card-footer">
+                    <span class="meta-tag">YouTube • Short</span>
+                    <a class="btn-link" href="https://www.youtube.com/watch?v=N6zCqKAfC_U" target="_blank" rel="noopener">Watch on YT</a>
+                </div>
+            </div>
         </article>
 
+        <!-- Card 2 -->
         <article class="card">
             <script type="application/ld+json">
             {
               "@context": "https://schema.org",
               "@type": "VideoObject",
-              "name": "Gareeb Ki Bike Aur Family 😭 Heart Touching Emotional Story 💔 #shorts #viral #trending #gareeb",
-              "description": "Gareeb Ki Bike Aur Family 😭 Heart Touching Emotional Story 💔 watch trending short.",
+              "name": "Gareeb Ki Bike Aur Family 😭 Heart Touching Emotional Story 💔",
+              "description": "An emotional narrative exploring family struggles and perseverance on the road.",
               "thumbnailUrl": "https://i.ytimg.com/vi/_gDxODx4vok/hqdefault.jpg",
               "uploadDate": "2026-07-08",
               "embedUrl": "https://www.youtube.com/embed/_gDxODx4vok",
               "contentUrl": "https://www.youtube.com/watch?v=_gDxODx4vok"
             }
             </script>
-            <h2>Gareeb Ki Bike Aur Family 😭 Heart Touching Emotional Story 💔 #shorts #viral #trending #gareeb</h2>
-            <div class="video-container">
+            <div class="card-preview">
+                <span class="badge">Emotional</span>
                 <iframe src="https://www.youtube.com/embed/_gDxODx4vok" loading="lazy" title="Gareeb Ki Bike Aur Family" allowfullscreen></iframe>
             </div>
-            <a class="btn" href="https://www.youtube.com/watch?v=_gDxODx4vok" target="_blank" rel="noopener" aria-label="Watch Gareeb Ki Bike Aur Family on YouTube">Watch on YouTube</a>
+            <div class="card-body">
+                <h2 class="card-title">Gareeb Ki Bike Aur Family 😭 Heart Touching Emotional Story 💔</h2>
+                <p class="card-desc">An emotional narrative exploring family struggles, daily sacrifices, and perseverance on the road.</p>
+                <div class="card-footer">
+                    <span class="meta-tag">YouTube • Short</span>
+                    <a class="btn-link" href="https://www.youtube.com/watch?v=_gDxODx4vok" target="_blank" rel="noopener">Watch on YT</a>
+                </div>
+            </div>
         </article>
 
+        <!-- Card 3 -->
         <article class="card">
             <script type="application/ld+json">
             {
               "@context": "https://schema.org",
               "@type": "VideoObject",
-              "name": "In Bachon ki halat dekh kar rona aa jayega 😭 Heart Touching Story #shorts #viral #trending #pakistan #india",
-              "description": "In Bachon ki halat dekh kar rona aa jayega 😭 Heart Touching Story watch trending short.",
+              "name": "In Bachon ki halat dekh kar rona aa jayega 😭 Heart Touching Story",
+              "description": "A moving short video covering social awareness and helping hands in needy areas.",
               "thumbnailUrl": "https://i.ytimg.com/vi/6MAaRYTJjCg/hqdefault.jpg",
               "uploadDate": "2026-07-08",
               "embedUrl": "https://www.youtube.com/embed/6MAaRYTJjCg",
               "contentUrl": "https://www.youtube.com/watch?v=6MAaRYTJjCg"
             }
             </script>
-            <h2>In Bachon ki halat dekh kar rona aa jayega 😭 Heart Touching Story #shorts #viral #trending #pakistan #india</h2>
-            <div class="video-container">
+            <div class="card-preview">
+                <span class="badge">Social</span>
                 <iframe src="https://www.youtube.com/embed/6MAaRYTJjCg" loading="lazy" title="In Bachon ki halat dekh kar rona aa jayega" allowfullscreen></iframe>
             </div>
-            <a class="btn" href="https://www.youtube.com/watch?v=6MAaRYTJjCg" target="_blank" rel="noopener" aria-label="Watch In Bachon ki halat dekh kar rona aa jayega on YouTube">Watch on YouTube</a>
+            <div class="card-body">
+                <h2 class="card-title">In Bachon ki halat dekh kar rona aa jayega 😭 Heart Touching Story</h2>
+                <p class="card-desc">A moving short video covering social awareness, empathy, and extending a helping hand in local areas.</p>
+                <div class="card-footer">
+                    <span class="meta-tag">YouTube • Short</span>
+                    <a class="btn-link" href="https://www.youtube.com/watch?v=6MAaRYTJjCg" target="_blank" rel="noopener">Watch on YT</a>
+                </div>
+            </div>
         </article>
 
+        <!-- Card 4 -->
         <article class="card">
             <script type="application/ld+json">
             {
               "@context": "https://schema.org",
               "@type": "VideoObject",
-              "name": "Gareeb ki Bike beech road par ruki 🏍️😱 Dil Jeet Liya! Wait For End! #shorts #viral #trending #help #humanity",
-              "description": "Gareeb ki Bike beech road par ruki 🏍️😱 Dil Jeet Liya! Wait For End! watch trending short.",
+              "name": "Gareeb ki Bike beech road par ruki 🏍️😱 Dil Jeet Liya! Wait For End!",
+              "description": "A roadside assistance story showcasing unexpected kindness when a motorcycle breaks down.",
               "thumbnailUrl": "https://i.ytimg.com/vi/Ciw2CYiJmH4/hqdefault.jpg",
               "uploadDate": "2026-07-08",
               "embedUrl": "https://www.youtube.com/embed/Ciw2CYiJmH4",
               "contentUrl": "https://www.youtube.com/watch?v=Ciw2CYiJmH4"
             }
             </script>
-            <h2>Gareeb ki Bike beech road par ruki 🏍️😱 Dil Jeet Liya! Wait For End! #shorts #viral #trending #help #humanity</h2>
-            <div class="video-container">
+            <div class="card-preview">
+                <span class="badge">Viral</span>
                 <iframe src="https://www.youtube.com/embed/Ciw2CYiJmH4" loading="lazy" title="Gareeb ki Bike beech road par ruki" allowfullscreen></iframe>
             </div>
-            <a class="btn" href="https://www.youtube.com/watch?v=Ciw2CYiJmH4" target="_blank" rel="noopener" aria-label="Watch Gareeb ki Bike beech road par ruki on YouTube">Watch on YouTube</a>
+            <div class="card-body">
+                <h2 class="card-title">Gareeb ki Bike beech road par ruki 🏍️😱 Dil Jeet Liya! Wait For End!</h2>
+                <p class="card-desc">A roadside assistance short showcasing unexpected kindness and community help when a motorcycle breaks down.</p>
+                <div class="card-footer">
+                    <span class="meta-tag">YouTube • Short</span>
+                    <a class="btn-link" href="https://www.youtube.com/watch?v=Ciw2CYiJmH4" target="_blank" rel="noopener">Watch on YT</a>
+                </div>
+            </div>
         </article>
 
+        <!-- Card 5 -->
         <article class="card">
             <script type="application/ld+json">
             {
               "@context": "https://schema.org",
               "@type": "VideoObject",
-              "name": "Hassan ke sath Prank ho gaya 😂 Trending Funny Video #shorts #ytshorts #viral #funny",
-              "description": "Hassan ke sath Prank ho gaya 😂 Trending Funny Video watch short.",
+              "name": "Hassan ke sath Prank ho gaya 😂 Trending Funny Video",
+              "description": "A lightweight comedic prank short filmed during outdoor street vlogging.",
               "thumbnailUrl": "https://i.ytimg.com/vi/TkWqtiv45bA/hqdefault.jpg",
               "uploadDate": "2026-07-08",
               "embedUrl": "https://www.youtube.com/embed/TkWqtiv45bA",
               "contentUrl": "https://www.youtube.com/watch?v=TkWqtiv45bA"
             }
             </script>
-            <h2>Hassan ke sath Prank ho gaya 😂 Trending Funny Video #shorts #ytshorts #viral #funny</h2>
-            <div class="video-container">
+            <div class="card-preview">
+                <span class="badge">Comedy</span>
                 <iframe src="https://www.youtube.com/embed/TkWqtiv45bA" loading="lazy" title="Hassan ke sath Prank ho gaya" allowfullscreen></iframe>
             </div>
-            <a class="btn" href="https://www.youtube.com/watch?v=TkWqtiv45bA" target="_blank" rel="noopener" aria-label="Watch Hassan ke sath Prank ho gaya on YouTube">Watch on YouTube</a>
+            <div class="card-body">
+                <h2 class="card-title">Hassan ke sath Prank ho gaya 😂 Trending Funny Video</h2>
+                <p class="card-desc">A lightweight comedic prank short filmed during outdoor street vlogging with friends.</p>
+                <div class="card-footer">
+                    <span class="meta-tag">YouTube • Comedy</span>
+                    <a class="btn-link" href="https://www.youtube.com/watch?v=TkWqtiv45bA" target="_blank" rel="noopener">Watch on YT</a>
+                </div>
+            </div>
         </article>
 
     </main>
 
     <footer>
-        <p>&copy; Hassan Media Hub. Content sourced directly from official YouTube feed.</p>
+        <p>&copy; 2026 Hassan Media Hub. Optimized for search crawlers & YouTube API embeds.</p>
     </footer>
 
 </body>

@@ -47,7 +47,7 @@
         .filter-btn { background: var(--surface-color); color: var(--text-primary); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.2s ease; }
         .filter-btn:hover, .filter-btn.active { background: var(--text-primary); color: var(--bg-color); }
 
-        /* Hero / Introduction Section */
+        /* Hero Section */
         .hero { max-width: 1300px; margin: 20px auto 0; padding: 0 24px; }
         .hero-box { background: linear-gradient(135deg, #1f1f1f 0%, #121212 100%); border: 1px solid var(--border-color); border-radius: var(--card-radius); padding: 24px; }
         .hero h1 { font-size: 1.5rem; margin-bottom: 8px; color: var(--text-primary); }
@@ -60,7 +60,40 @@
         .card { background: var(--surface-color); border-radius: var(--card-radius); overflow: hidden; border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); border-color: #444; }
 
-        .card-preview { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; }
+        /* Lite Facade Overlay Setup */
+        .card-preview { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; cursor: pointer; overflow: hidden; }
+        .card-preview img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+        
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 0, 0, 0.85);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, background 0.2s ease;
+            z-index: 3;
+        }
+        .play-btn::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 0 8px 14px;
+            border-color: transparent transparent transparent #ffffff;
+            margin-left: 3px;
+        }
+        .card-preview:hover .play-btn {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: rgba(255, 0, 0, 1);
+        }
+
         .card-preview iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         
         .badge { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.75); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; backdrop-filter: blur(4px); z-index: 2; }
@@ -130,9 +163,10 @@
               "contentUrl": "https://www.youtube.com/watch?v=N6zCqKAfC_U"
             }
             </script>
-            <div class="card-preview">
+            <div class="card-preview" data-id="N6zCqKAfC_U" onclick="loadIframe(this)">
                 <span class="badge">Shorts</span>
-                <iframe src="https://www.youtube.com/embed/N6zCqKAfC_U" loading="lazy" title="Masoom Bachon Ka Surprise Jhula" allowfullscreen></iframe>
+                <img src="https://i.ytimg.com/vi/N6zCqKAfC_U/hqdefault.jpg" alt="Masoom Bachon Ka Surprise Jhula" loading="lazy">
+                <div class="play-btn"></div>
             </div>
             <div class="card-body">
                 <h2 class="card-title">Masoom Bachon Ka Surprise Jhula 🎡 Gareeb Bachon Ki Khushi Ne Dil Jeet Liya ❤️</h2>
@@ -158,9 +192,10 @@
               "contentUrl": "https://www.youtube.com/watch?v=_gDxODx4vok"
             }
             </script>
-            <div class="card-preview">
+            <div class="card-preview" data-id="_gDxODx4vok" onclick="loadIframe(this)">
                 <span class="badge">Emotional</span>
-                <iframe src="https://www.youtube.com/embed/_gDxODx4vok" loading="lazy" title="Gareeb Ki Bike Aur Family" allowfullscreen></iframe>
+                <img src="https://i.ytimg.com/vi/_gDxODx4vok/hqdefault.jpg" alt="Gareeb Ki Bike Aur Family" loading="lazy">
+                <div class="play-btn"></div>
             </div>
             <div class="card-body">
                 <h2 class="card-title">Gareeb Ki Bike Aur Family 😭 Heart Touching Emotional Story 💔</h2>
@@ -186,9 +221,10 @@
               "contentUrl": "https://www.youtube.com/watch?v=6MAaRYTJjCg"
             }
             </script>
-            <div class="card-preview">
+            <div class="card-preview" data-id="6MAaRYTJjCg" onclick="loadIframe(this)">
                 <span class="badge">Social</span>
-                <iframe src="https://www.youtube.com/embed/6MAaRYTJjCg" loading="lazy" title="In Bachon ki halat dekh kar rona aa jayega" allowfullscreen></iframe>
+                <img src="https://i.ytimg.com/vi/6MAaRYTJjCg/hqdefault.jpg" alt="In Bachon ki halat dekh kar rona aa jayega" loading="lazy">
+                <div class="play-btn"></div>
             </div>
             <div class="card-body">
                 <h2 class="card-title">In Bachon ki halat dekh kar rona aa jayega 😭 Heart Touching Story</h2>
@@ -214,9 +250,10 @@
               "contentUrl": "https://www.youtube.com/watch?v=Ciw2CYiJmH4"
             }
             </script>
-            <div class="card-preview">
+            <div class="card-preview" data-id="Ciw2CYiJmH4" onclick="loadIframe(this)">
                 <span class="badge">Viral</span>
-                <iframe src="https://www.youtube.com/embed/Ciw2CYiJmH4" loading="lazy" title="Gareeb ki Bike beech road par ruki" allowfullscreen></iframe>
+                <img src="https://i.ytimg.com/vi/Ciw2CYiJmH4/hqdefault.jpg" alt="Gareeb ki Bike beech road par ruki" loading="lazy">
+                <div class="play-btn"></div>
             </div>
             <div class="card-body">
                 <h2 class="card-title">Gareeb ki Bike beech road par ruki 🏍️😱 Dil Jeet Liya! Wait For End!</h2>
@@ -242,9 +279,10 @@
               "contentUrl": "https://www.youtube.com/watch?v=TkWqtiv45bA"
             }
             </script>
-            <div class="card-preview">
+            <div class="card-preview" data-id="TkWqtiv45bA" onclick="loadIframe(this)">
                 <span class="badge">Comedy</span>
-                <iframe src="https://www.youtube.com/embed/TkWqtiv45bA" loading="lazy" title="Hassan ke sath Prank ho gaya" allowfullscreen></iframe>
+                <img src="https://i.ytimg.com/vi/TkWqtiv45bA/hqdefault.jpg" alt="Hassan ke sath Prank ho gaya" loading="lazy">
+                <div class="play-btn"></div>
             </div>
             <div class="card-body">
                 <h2 class="card-title">Hassan ke sath Prank ho gaya 😂 Trending Funny Video</h2>
@@ -259,8 +297,24 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Hassan Media Hub. Optimized for search crawlers & YouTube API embeds.</p>
+        <p>&copy; 2026 Hassan Media Hub. Optimized for fast execution & YouTube API embeds.</p>
     </footer>
 
+    <!-- Lite Facade Execution Script -->
+    <script>
+        function loadIframe(element) {
+            const videoId = element.getAttribute('data-id');
+            if (!videoId || element.querySelector('iframe')) return;
+
+            element.innerHTML = `
+                <iframe 
+                    src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+                    title="YouTube Video Player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            `;
+        }
+    </script>
 </body>
 </html>
